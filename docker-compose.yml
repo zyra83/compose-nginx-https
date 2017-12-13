@@ -1,0 +1,11 @@
+web:
+  image: nginx
+  volumes:
+   - ./nginx.conf:/etc/nginx/nginx.conf
+   - ./default.conf:/etc/nginx/conf.d/default.conf
+   - ./dev.mika.crt:/etc/ssl/certs/dev.mika.crt
+   - ./dev.mika.key:/etc/ssl/private/dev.mika.key
+   - ./dhparam.pem:/etc/ssl/certs/dhparam.pem
+  ports:
+   - "80:80"
+   - "443:443"
